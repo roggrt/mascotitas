@@ -1,0 +1,18 @@
+html {
+	background: url('../../../assets/img/gatito.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+          
+.bg-image {
+    content: url('../../../assets/img/gatito.jpg');
+    width: 50%;
+    height: 599px;
+    object-fit: cover;
+    border-image-outset: 1px solid rgb(255, 153, 0);
+    background-color: lightblue;
+}
+        
+      

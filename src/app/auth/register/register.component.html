@@ -1,0 +1,45 @@
+<div class="container-fluid bg-light">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="card card-container col-md-6 d-none d-md-flex bg-image"></div>
+
+        <div style="width:400px; margin: 5% auto;" class="col-md-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div>
+                        <div class="col-lg-4 col-xl-7 mx-auto">
+                            <h1 style="font-size: 75px; " class="display-8">Hola!</h1>
+                            <p class="text-center justify-content-between mt-4" style="font-size: 20px; margin-top: 9%;" class="text-muted mb-4">Registrate para que puedas interactuar con los demás usuarios </p>
+                            <form [formGroup]="registerForm" (ngSubmit)="signUp()">
+                                <div class="form-group mb-3">
+                                    <input id="inputName" type="name" placeholder="Nombre" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" formControlName="name" [(ngModel)]="user.name">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input id="inputEmail" type="email" placeholder="Correo electrónico" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" formControlName="email" [(ngModel)]="user.email">
+                                </div> 
+                                <div class="form-group mb-3">
+                                    <input id="inputPassword" type="password" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" formControlName="password" [(ngModel)]="user.password">
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Recordar contraseña</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Registrate</button>
+                                <div class="text-center  justify-content-between mt-4">
+                                    <p>Ya tienes cuenta?
+                                        <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="font-italic text-muted">
+                                            <u>Inicia sesión</u></a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End -->
+
+            </div>
+        </div>
+        <!-- End -->
+
+    </div>
+</div>

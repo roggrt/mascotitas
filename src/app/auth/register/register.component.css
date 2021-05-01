@@ -1,0 +1,5 @@
+.bg-image {
+    background-image: url("https://data.whicdn.com/images/75455937/original.jpg");
+    background-size: cover;
+    background-position: center center;
+}

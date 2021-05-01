@@ -1,0 +1,123 @@
+
+<app-navbar></app-navbar>
+<html>
+
+    <section class="jumbotron text-center">
+        
+        <div class="container">
+          <h1 class="jumbotron-heading">Mascotas!!</h1>
+          <p class="lead text-muted">Estas mascotitas tan tiernas y adorables necesitan de un hogar</p>
+          <p>
+              <mat-tab-group class="text-center" mat-align-tabs="center">
+                
+                <mat-tab label=" Quiero adoptar!!" >
+                    
+                    <div class="album bg-light">
+          
+                        <div class="container">
+                            <div class= "row"> 
+                                   
+                                
+                        <ul *ngFor="let mascota of mascotasService.mascotas">
+                            <img class="card-img-top" src="{{mascota.url}}" alt="??">
+                            
+                                      <div class="card-body">
+                                         <b>Nombre:</b>  {{mascota.name}}
+                                        <p class="card-text"></p>
+                                        <p class="card-text">{{mascota.description}}</p>
+                                        <p class="card-text"><b>Contacto: </b>{{mascota.contacto}}</p>
+                                        <p class="card-text"><b>Sector: </b>{{mascota.sector}}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          <div class="btn-group">
+                                            
+                                            
+                                            
+                                            <button type="button" class="btn btn-danger btn-sm" (click)="deleteMascota(mascota._id, mascotaForm)">Delete</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="editMascota(mascota)">Edit</button>
+                                          </div>
+                                          <small class="text-muted">9 mins</small>
+                                        </div>
+                                      </div>
+                            
+                        
+                        
+                            
+                            
+                        </ul>     </div>
+                        
+                    </div>
+                              </div>
+
+
+                </mat-tab>
+                <mat-tab label=" Quiero dar en adopcion!">
+                    <div class="cols">
+                        
+                   <div id="lateral" class="col1">
+                    <form #mascotaForm="ngForm" (ngSubmit)="addMascota(mascotaForm)" class="border border-light p-4">
+                      <div class="form-group">
+                        <p class="h4 mb-2 text-center">Registro de mascota</p>
+                    
+                        
+                        <input class="form-control" type="text" placeholder="Nombre de la mascota" name="name" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.name">
+                        <p></p>
+                        <input class="form-control" id="defaultSaveFormLastName" type="text" placeholder="Link de la imagen" name="url" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.url">
+                        <p></p>
+                                      
+                        <label for="Felino, Canino">Tipo de mascota</label>
+                        <select class="browser-default custom-select mb-4" name="tipo" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.tipo">
+                            <option value="" disabled="" selected=""></option>
+                            <option value="1">Gato/a</option>
+                            <option value="2">Perro/a</option>
+                            <option value="3">Otro</option>
+                        </select>
+                    
+                        <input class="form-control mb-4" id="textInput" type="text" placeholder="Sector" name="sector" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.sector">
+                        <input class="form-control mb-4" id="textInput" type="text" placeholder="Contacto" name="contacto" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.contacto">
+                    
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextareaSave" placeholder="Descripcion"
+                        name="description" #name="ngModel"[(ngModel)]="mascotasService.selectedMascota.description"></textarea>
+                        <p></p>
+                        <a href="https://imgbb.com/upload" class="btn btn-info btn-block" target="_blank">Generar link de imagen</a>
+                        
+                        <button class="btn btn-info btn-block" type="submit">Save</button>
+                      </div>
+                      </form>
+                </div>
+            
+                <img class="img-fluid rounded" width='750' height='300' src="../../assets/img/guia.png" alt="">
+
+
+            </div>
+                </mat-tab>
+                <mat-tab label=" Quiero contribuir!"><img class="img-fluid rounded" width='750' height='300' src="../../assets/img/fundacion.png" alt="Fundacion"></mat-tab>
+
+                
+                <mat-tab label=" Noticias! "><img class="img-fluid rounded" width='750' height='300' src="https://elmercurio.com.ec/wp-content/uploads/2020/11/animales-perros-1-3A-4-coles-xca-696x464.jpg" alt="Fundacion">
+                  <p></p>
+                  <p style="margin: 0cm 0cm 8pt; line-height: 107%; font-size: 15px; font-family: Calibri, sans-serif; text-align: justify;"><span style="font-size: 15px; font-family: Tahoma, Geneva, sans-serif;">El aumento del n&uacute;mero de mascotas callejeras o sin cuidado de sus due&ntilde;os moviliza a veterinarios y defensores de animales en Cuenca. Los primeros advierten que al reproducirse un perro, toda su parentela puede procrear hasta 60 mil canes.&nbsp;</span></p>
+<p style="margin: 0cm 0cm 8pt; line-height: 107%; font-size: 15px; font-family: Calibri, sans-serif; text-align: justify;"><span style="font-size: 15px;"><span style="font-family: Tahoma,Geneva, sans-serif;">Los mercados, los botaderos de basura y relleno sanitario, son los sectores donde masivamente se encuentran los perros denominados tambi&eacute;n de la calle. Estos animales se convierten en &ldquo;limpiadores&rdquo; de los desperdicios del pi</span></span><span style="font-size: 15px; font-family: Tahoma, Geneva, sans-serif;">so o que llegan en fundas y son mal dispuestos.</span></p>
+                    
+
+                    
+                </mat-tab>
+                <mat-tab label=" Quienes somos ">
+                  <p style="text-align: center;"><span style='font-size: 26px; font-family: "Lucida Console", Monaco, monospace;'>Quienes somos.</span></p>
+                  <img class="img-fluid rounded" width='350' height='300' src="https://yt3.ggpht.com/ytc/AAUvwnjgzTUqsYfTJFGnxLYJmJtjF9UevZWzW8mTpJX0tg=s900-c-k-c0x00ffffff-no-rj" alt="Fundacion">
+<p style="text-align: center;"><br></p>
+<p style="text-align: center;"><span style="font-family: Tahoma,Geneva, sans-serif;">Soy un estudiante del Instituto superior Tecnol&oacute;gico del Azuay, el cual esta desarrollando un proyecto que se ayudara a la adopci&oacute;n de animales y as&iacute; combatir la situaci&oacute;n de abandono en la que se encuentran, en la secci&oacute;n inferior encontraras datos de contacto</span></p>
+                </mat-tab>
+            </mat-tab-group>
+            <a  class="btn btn-primary my-2">Quiero adoptar!</a> --
+            <a  class="btn btn-secondary my-2">  Quiero dar en adopcion!</a> --
+            <a  class="btn btn-secondary my-2">Quiero contribuir!</a>
+          </p>
+          
+        </div>
+      </section>
+     
+          
+        <p></p>
+    
+  <app-footer></app-footer>
+</html>

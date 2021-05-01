@@ -1,0 +1,21 @@
+#lateral { width: 500px;
+ }
+ .cols {
+    display: flex;
+  }
+  
+  .cols div {
+    flex: 1;
+  }
+  
+  .col1 {
+    background-color: orange;
+  }
+  
+  .col2 {
+    background-color: skyblue;
+  }
+  
+  p {
+    margin: 1em;
+  }

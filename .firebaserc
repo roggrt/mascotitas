@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lovelypets-d4e28": {
+      "hosting": {
+        "Mascotitas": [
+          "lovelypets-d4e28"
+        ]
+      }
+    }
+  }
+}

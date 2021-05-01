@@ -1,0 +1,56 @@
+<html>
+<div class="container-fluid bg-light">
+    <div class="row no-gutter">
+        <!-- The image half -->
+
+        <div class="card card-container bg-image"></div>
+
+        <div style="width:400px; margin: 5% auto;" class="col-md-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div>
+                        <div class="col-lg-4 col-xl-7 mx-auto">
+                            <h1 style="font-size: 75px; " class="display-2">Hola!</h1>
+                            <p style="font-size: 20px; margin-top: 9%;" class="text-muted mb-4">Inicia sesión para que puedas interactuar con los demás usuarios </p>
+                            <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+                                <div class="form-group mb-3">
+                                    <input id="inputEmail" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-5 shadow-sm px-4" formControlName="email" [(ngModel)]="user.email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" formControlName="password" [(ngModel)]="user.password">
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Recordar contraseña</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                                <div class="text-center  justify-content-between mt-4">
+                                    <p>No tienes cuenta?
+                                        <a [routerLink]="['/register']" routerLinkActive="router-link-active" class="font-italic text-muted">
+                                            <u>Regístrate</u></a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End -->
+
+            </div>
+        </div>
+        <!-- End -->
+
+    </div>
+</div>
+
+<style>
+    h1 {
+        font-family: "Carter One";
+        font-size: 24px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        line-height: 26.4px;
+    }
+</style>
+</html>
